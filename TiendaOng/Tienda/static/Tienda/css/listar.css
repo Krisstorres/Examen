@@ -1,0 +1,35 @@
+:root {
+   
+    --yellowExtrange:rgba(255, 247, 6, 0.848);
+  }
+
+
+.conter{
+    max-width: 1900px;
+    background-color:var(--yellowExtrange);
+    border: 2px;
+    border-style: solid;
+}
+.imagg{
+    margin-right: -128px;
+    border: 2.4px;
+    border-style: groove;
+}
+.textoz{
+    font-size: large;
+font-family: 'Times New Roman', Times, serif;
+
+font-family: Impact, Haettenschweiler, sans-serif;
+}
+.toble{
+    border: 2px;
+    border-style: solid;
+}
+.tl-img{
+    height: 25px;
+    width: 30px;
+
+}
+.btns{
+    margin-right: -128px;
+}

@@ -1,0 +1,115 @@
+body{
+    background-color: rgb(245, 242, 239);
+}
+
+.carousel-item{
+    background-position: center;
+    background-size: cover;
+}
+
+#picture{
+    width: 100%;
+    height: 500px;
+}
+
+.container{
+    margin-top: 7%;
+}
+
+
+
+#cuadrado{
+    padding: 100px;
+    margin-bottom: 7%;
+    border: 3px solid orange;
+    position: relative;
+}
+
+#comen{
+    background-color: black;
+
+
+
+
+}
+
+#cua{
+margin: 10px;
+}
+
+#opaco{
+opacity: 0.5;
+
+}
+
+
+
+.display-1{
+    font-family:sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+}
+
+
+
+.fs-3{
+    color:rgb(96, 98, 131);
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+
+
+
+.et_pb_row_13 {
+    background-size: contain;
+    background-position: bottom center;
+    background-image: url(contactf.png);  	
+    background-repeat: no-repeat;
+    min-height: 300px;
+    max-width:100%;}
+
+
+h3{
+    text-align: center;
+}
+
+.qqq{
+    border-radius: 100%;
+    padding: 6%;
+   margin-top: 3%;
+}
+
+.rrr{
+    font-family:sans-serif;
+    font-size: 50px;
+    color: rgb(253, 252, 252);
+}
+
+.aaa{
+    margin-top: 5%;
+    margin-bottom: 2PX;
+    background-color: rgb(8, 8, 131);
+}
+
+
+
+.nav-item{
+    background-color: aliceblue;
+}
+
+.wqw{
+    color:ghostwhite;
+    margin-top: 10px;
+}
+.titlle{
+    display:flex;
+    flex-direction: column;
+    justify-content: end
+    ;
+}
+
+
+
+

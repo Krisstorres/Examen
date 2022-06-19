@@ -1,0 +1,82 @@
+{% extends 'Tienda/base.html' %}
+{% block js %}
+<script>
+    function EliminarProducto(id){
+        Swal.fire({
+            "title":"¿Estas seguro?",
+            "text":"¿Desea eliminar el producto ?",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No, Cancelar",
+            "confirmButtonText":"Eliminar producto",
+            "reverseButtons":true,
+            "confirmButtonColor":"darkred",
+            "cancelButtonColor":"bg-primary",
+            "confirmButtonColor":"#dc3545"
+        })
+        .then(function (result){
+            if(result.isConfirmed){
+                window.location.href="/Eliminar_prod/"+id+"/"
+            }
+        })
+    }
+</script>
+{% endblock %}
+
+ 
+{% block contenido %}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'Tienda/css/listar.css'%}">
+<div class="contenedor container ">
+<div class="conter">
+
+<table class="table  toble table-striped table-hover table-responsive-sm" >
+    <h2 class="textoz"><img class="tl-img img-fluid" src="{% static 'Tienda/img/paw.png'%}" alt=""> Productos Disponibles</h2>
+        <tr>
+            
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Marca</th>
+            <th>Nuevo</th>
+            <th>Imagen</th>
+            <th>Modificar</th>
+        </tr>
+
+            {% for p in productos %}
+            
+        <tr>
+            <td>{{p.nombre | title}}</td>
+            <td>$ {{p.precio | intcomma}}</td>
+
+            <td>{{p.marca | title}}</td>
+            <td> 
+            {% if p.nuevo %}
+            Nuevo
+            {% else %}
+            Usado
+            {% endif %}
+            </td>   
+            <td>
+                {% if p.imagen%}
+                <img src="{{p.imagen.url}}" width="100px" height="100px" alt="" class="img-fluid imagg">
+                {% endif %}
+                <td >
+                    <a href="{% url 'Modificar' p.id %}" class="btn btn-info btn-sm text-center">Modificar</a>
+                    &nbsp;
+                    <a href="#" onclick="EliminarProducto({{ p.id }})" class="btn btn-danger btn-sm text-center btns">Eliminar</a>
+                </td>
+            </tr>
+            </td>
+           
+            {% endfor %}
+</table>
+</div>
+</div>
+
+
+
+
+{% endblock %}
