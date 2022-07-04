@@ -48,16 +48,46 @@
                   <li>
                     <a href="{% url 'contacto' %}" class="nav-link active">Contacto</a>
                   </li>
+                
+                  <li>
+                    
+               
+                  {% if user.is_authenticated %}
+                  </li>
+                      
+                  <a href="#"class="nav-link active"><span class="text-capitalize font-weight-bold">Bienvenido: </span>{{ user.username }}</a>
+                </li>
+                  <li>
+                    <a href="{% url 'logout' %}"class="nav-link active">Cerrar sesion</a>
+                  </li>
+                  {% else %}
+                  <li>
+                  <a href="{% url 'login' %}" class="nav-link active">Iniciar sesion</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'Registro' %}" class="nav-link active">Registrate</a>
+                  </li>
+                  {% endif %}
+                  <li>
+                  {% if perms.Tienda.add_productoww %}
                   <li>
                     <a href="{% url 'Agregar' %}" class="nav-link active">Nuevo Producto</a>
                   </li>
+                  {% endif %}
+                  {% if perms.Tienda.view_productooww %}
                   <li>
                     <a href="{% url 'Listar' %}" class="nav-link active">Lista de productos</a>
+                      
                   </li>
+                  {% endif %}
+                  {% if perms.Tienda.view_Refugios1 %}
+                  <li>
+                    <a href="{% url 'Agregar_F' %}" class="nav-link active">Agregar Fundacion</a>
+                      
+                  </li>
+                  {% endif %}
+                
 
-
-
-                  
                 </div>
               </div>
             </div>
@@ -160,6 +190,8 @@
     </script>
   {% endfor %}
 {% endif %}
+
+
 
     {% block js %}
     {% endblock %}

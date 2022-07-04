@@ -45,7 +45,7 @@
             <th>Modificar</th>
         </tr>
 
-            {% for p in productos %}
+            {% for p in entity %}
             
         <tr>
             <td>{{p.nombre | title}}</td>
@@ -64,15 +64,23 @@
                 <img src="{{p.imagen.url}}" width="100px" height="100px" alt="" class="img-fluid imagg">
                 {% endif %}
                 <td >
+                    {% if perms.tienda.change_productoww %}
                     <a href="{% url 'Modificar' p.id %}" class="btn btn-info btn-sm text-center">Modificar</a>
+                    {% endif %}
                     &nbsp;
+                    {% if perms.tienda.delete_productoww %}
                     <a href="#" onclick="EliminarProducto({{ p.id }})" class="btn btn-danger btn-sm text-center btns">Eliminar</a>
+                    {% endif %}
                 </td>
             </tr>
             </td>
            
             {% endfor %}
 </table>
+<div class="paginador">
+    {% include 'Tienda\Paginas.html' %}
+    
+    </div>
 </div>
 </div>
 

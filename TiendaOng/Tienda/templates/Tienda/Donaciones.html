@@ -1,195 +1,35 @@
 {% extends 'Tienda/base.html' %}
 
-
 {% block contenido %}
-<div class="container">
-    <h2 class="text-center lh-lg">AYUDA A UNA FUNDACION SOLO DANDO UN CLICK</h2>
+{% load static %}
 
-<div class="row m-5">
+<link rel="stylesheet" href="{% static '/Tienda/css/estiloos.css'%}">
+{% load humanize %}
+<h2 class="titulos text-center font-weight-bold ">Fundaciones y refugios </h2>
+<br>
+<br>
 
-    <div class="col-lg-4 mb-4">
-    
-      <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage1">
-        {% load static %}
-        <img class="w-100 mb-4  rounded" src="{% static 'Tienda/img/refugio1.jpg'%}" alt="">
-      </a>
-    
-      <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage2">
-        {% load static %}
-        <img class="w-100 mb-4  rounded" src="{% static 'Tienda/img/refugio2.jpg'%}" alt="">
-      </a>
-    
+<div class="productos bg-white ">
+    {% for p in fundaciones %}
+    <div class="producto  m-5 ">
+        <div class="cord">
+        <h2 class="titulos">{{p.nombre_refugio | title}}</h2>
+        {% if p.imagen_refugio%}
+        <img src="{{p.imagen.url}}" height="300px" width="300px" alt="">
+        {% endif %}
+        <div>
+            <h5 class="titulos">{{p.descripcion_refugio | capfirst}}</h5>
+            <h6 class="titulos">Cuenta{{ p.cuenta_refugio | capfirst }}</h6>
+            <h4>RUT:{{p.rut_refugio |capfirst}}</h4>
+            <button class="btn btn-primary" type="submit">Agregar a carrito</button>
+        </div>
+        </div>
     </div>
-    <div class="col-lg-4 mb-4">
     
-      <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage3">
-        {% load static %}
-        <img class="w-100 mb-4  rounded" src="{% static 'Tienda/img/refugio3.jpg'%}" alt="">
-      </a>
-    
-      <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage4">
-        {% load static %}
-        <img class="w-100 mb-4  rounded" src="{% static 'Tienda/img/refugio4.jpg'%}" alt="">
-      </a>
-    </div>
-    <div class="col-lg-4 mb-4">
-    
-      <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage5">
-        {% load static %}
-        <img class="w-100 mb-4  rounded" src="{% static 'Tienda/img/refugio5.jpg'%}" alt="">
-      </a>
-    
-      <a href="#!" data-bs-toggle="modal" data-bs-target="#modalImage6">
-        {% load static %}
-        <img class="w-100 mb-4  rounded" src="{% static 'Tienda/img/refugio6.jpg'%}" alt="">
-      </a>
-    
-    </div>
-    </div>
+    {% endfor %}
 </div>
-    
-    
-    <div
-    tabindex="-1" aria-labelledby="modalImage1" aria-hidden="true"
-    class="modal fade" id="modalImage1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
+<br>
+<br>
 
-        <div class="card mb-3">
-          {% load static %}
-            <img src="{% static 'Tienda/refugio1.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">EL CAMPITO REFUGIO</h5>
-              <p class="card-text">
-                  Rut: 3033009103
-                  cuenta corriente: 030339329392
-                  nombre:el campito feliz
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        
-      </div>
-    </div>
-    </div>
-    </div>
 
-    <div
-    tabindex="-1" aria-labelledby="modalImage2" aria-hidden="true"
-    class="modal fade" id="modalImage2">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="card mb-3">
-          {% load static %}
-            <img src="{% static 'Tienda/img/refugio2.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Perros del alma</h5>
-              <p class="card-text">
-                Rut: 3033009103
-                cuenta corriente: 030339329392
-                nombre:Perros del alma
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-
-      </div>
-    </div>
-    </div>
-    </div>
-
-    <div
-    tabindex="-1" aria-labelledby="modalImage3" aria-hidden="true"
-    class="modal fade" id="modalImage3">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="card mb-3">
-          {% load static %}
-            <img src="{% static 'Tienda/img/refugio3.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Adopt</h5>
-              <p class="card-text">
-                Rut: 3033009103
-                cuenta corriente: 030339329392
-                nombre:Adopt
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-
-      </div>
-    </div>
-    </div>
-    </div>
-
-    <div
-    tabindex="-1" aria-labelledby="modalImage4" aria-hidden="true"
-    class="modal fade" id="modalImage4">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="card mb-3">
-          {% load static %}
-            <img src="{% static 'Tienda/img/refugio4.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">sociedad osorno</h5>
-              <p class="card-text">
-                Rut: 3033009103
-                cuenta corriente: 030339329392
-                nombre:sociedad osorno
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-
-      </div>
-    </div>
-    </div>
-    </div>
-
-    <div
-    tabindex="-1" aria-labelledby="modalImage5" aria-hidden="true"
-    class="modal fade" id="modalImage5">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="card mb-3">
-          {% load static %}
-            <img src="{% static 'Tienda/img/refugio5.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">PRAC</h5>
-              <p class="card-text">
-                Rut: 3033009103
-                cuenta corriente: 030339329392
-                nombre:PRAC
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-
-      </div>
-    </div>
-    </div>
-    </div>
-
-    <div
-    tabindex="-1" aria-labelledby="modalImage6" aria-hidden="true"
-    class="modal fade" id="modalImage6">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="card mb-3">
-          {% load static %}
-            <img src="{% static 'Tienda/img/refugio6.jpg'%}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Adopta una amigo</h5>
-              <p class="card-text">
-                Rut: 3033009103
-                cuenta corriente: 030339329392
-                nombre:Adopta una amigo
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-
-      </div>
-    </div>
-    </div>
-    </div>
 {% endblock %}

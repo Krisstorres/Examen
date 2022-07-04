@@ -2,3 +2,5 @@ pillow
 django-admin-interface
 django-crispy-forms
 npm install sweetalert2
+npm install medium-zoom
+django-rest-framework

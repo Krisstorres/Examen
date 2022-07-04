@@ -18,7 +18,7 @@
         <div class="carousel-item active">
           <img src="{% static 'Tienda/img/active2.jpg'%}" class="d-block w-100" alt="..." id="picture">
           <div class="carousel-caption d-none d-md-block">
-            <a href="#"  id="div-btn5" class="activee" ><h5>Sobre Nosotros</h5></a>
+            <a href="{% url 'Quienes somos' %}"  id="div-btn5" class="activee" ><h5>Sobre Nosotros</h5></a>
           </div>
         </div>
     
@@ -26,7 +26,7 @@
           {% load static %}
           <img src="{% static 'Tienda/img/tienda1.jpg'%}" class="d-block w-100" alt="..." id="picture">
           <div class="carousel-caption d-none d-md-block">
-            <a href="#"  id="div-btn6" class="activee"><h5>Conoce Nuestra Tienda</h5></a>
+            <a href="{% url 'Tiendas' %}"  id="div-btn6" class="activee"><h5>Conoce Nuestra Tienda</h5></a>
           </div>
         </div>
     
@@ -34,7 +34,7 @@
           {% load static %}
           <img src="{% static 'Tienda/img/img3.jpg'%}" class="d-block w-100" alt="..." id="picture" >
           <div class="carousel-caption d-none d-md-block">
-            <a href="#"  id="div-btn7" class="activee"><h5>Dona a refugios de animales</h5></a>
+            <a href="{% url 'Donaciones' %}" id="div-btn7" class="activee"><h5>Dona a refugios de animales</h5></a>
           </div>
         </div>
     
@@ -42,7 +42,7 @@
           {% load static %}
           <img src="{% static 'Tienda/img/img2.jpg'%}" class="d-block w-100" alt="..." id="picture">
           <div class="carousel-caption d-none d-md-block">
-            <a href="#"  id="div-btn8" class="activee"><h5>Contactanos</h5></a>
+            <a href="{% url 'contacto' %}"  id="div-btn8" class="activee"><h5>Contactanos</h5></a>
           </div>
         </div>
         
@@ -97,7 +97,7 @@
                  <img src="{% static 'Tienda/img/ropa1.jpg'%}" class="card-img-top h-auto" alt="..." >
                <div class="card-body">
                  <p class="card-text"> Lorem Lorem ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis ad sequi officia inventore similique veritatis. Labore asperiores suscipit voluptatum ad, voluptates nesciunt. Ipsam labore qui, provident laborum odio incidunt iure? Lorem ipsum dolor sit amet consectetur adipisicing elit. Est soluta accusamus esse dolores assumenda pariatur, corporis tempore aspernatur, architecto 
-                   </p><a href="#"  id="div-btn9" class="activeee" >Comprar</a> 
+                   </p><a href="{% url 'Tiendas' %}"  id="div-btn9" class="activeee" >Comprar</a> 
                </div>
                </div>
   </div>
@@ -112,7 +112,7 @@
                <img src="{% static 'Tienda/img/accesorio1.jpg'%}" class="card-img-top" alt="...">
              <div class="card-body">
                <p class="card-text">Some quick example text to build on </p>
-               <a href="#"  id="div-btn10" class="activeee" >Comprar</a> 
+               <a href="{% url 'Tiendas' %}" id="div-btn10" class="activeee" >Comprar</a> 
             </div>
            </div>
       </div>
@@ -124,8 +124,8 @@
               {% load static %}
                <img src="{% static 'Tienda/img/juguetes1.jpg'%}" class="card-img-top" alt="...">
            <div class="card-body">
-               <p class="card-text">Some quick example text to build on </p>
-               <a href="#"  id="div-btn11" class="activeee" >Comprar</a> 
+               <p class="card-text">Some quick example text to build one </p>
+               <a href="{% url 'Tiendas' %}"  id="div-btn11" class="activeee" >Comprar</a> 
            </div>
            </div>
       </div>
@@ -137,7 +137,7 @@
           <img src="{% static 'Tienda/img/comida1.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text">Some quick example text</p>
-          <a href="#"  id="div-btn12" class="activeee" >Comprar</a>
+          <a href="{% url 'Tiendas' %}" id="div-btn12" class="activeee" >Comprar</a>
        </div>
       </div>
       </div>
@@ -149,7 +149,7 @@
           <img src="{% static 'Tienda/img/comida1.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text">Some quick example text</p>
-          <a href="#"  id="div-btn13" class="activeee" >Comprar</a> 
+          <a href="{% url 'Tiendas' %}"  id="div-btn13" class="activeee" >Comprar</a> 
        </div>
       </div>
       </div>
@@ -205,7 +205,7 @@
   <!-- FOTO GRANDE CON TEXTO Y BOTOM  -->
   
   
-  <div class="d-flex justify-content-center align-items-center" style="background-image: url(img/perro2.jpg);height:600px;"> 
+  <div class="d-flex justify-content-center align-items-center IMAGENPERRO" height=600px> 
   <div class="row "> 
   
       <div class="col-1"></div>
@@ -215,7 +215,7 @@
           <div class="col-12"> <h1 class="display-1 " id="titulo">Ayuda a sonreir a un callejero</h1></div>
           <div class="col-12"><p class="fs-3">Ayudanos a brindar comida y alimentos a los perros sin hogar has click en el boton</p> 
           </div>
-          <div class="col-12"><a href="#"  id="div-btn14" class="activeee" ><button type="button" class="btn btn-danger">DONAR</button></a> </div>
+          <div class="col-12"><a href="{% url 'Donaciones' %}" id="div-btn14" class="activeee" ><button type="button" class="btn btn-danger">DONAR</button></a> </div>
         </div>
       </div>
     </div>
@@ -235,7 +235,7 @@
           <h5 class="card-title">Paco y su nueva correa gucci</h5>
           <p class="card-text">nuestra nueva linea de correas para perro no te quedes sin la tuya</p>
   
-            <a href="#"  id="div-btn15" class="activee" ><button type="button" class="btn btn-lg btn-primary">COMPRAR</button></a>
+            <a href="{% url 'Tiendas' %}"  id="div-btn15" class="activee" ><button type="button" class="btn btn-lg btn-primary">COMPRAR</button></a>
          
         </div>
       </div>
@@ -249,7 +249,7 @@
   <div class="rrr col-12 text-center">CONTACTANOS</div>
   <div class="et_pb_row et_pb_row_13 ">
   <div class="container  d-flex justify-content-center">
-    <a href="#"  id="div-btn16" class="activee" ><button type="button" class="qqq btn btn-primary btn-lg">Charlemos</button></a>
+    <a href="{% url 'contacto' %}" id="div-btn16" class="activee" ><button type="button" class="qqq btn btn-primary btn-lg">Charlemos</button></a>
     </div>
   </div>
   </div>

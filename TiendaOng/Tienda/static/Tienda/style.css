@@ -65,10 +65,12 @@ opacity: 0.5;
 .et_pb_row_13 {
     background-size: contain;
     background-position: bottom center;
-    background-image: url(contactf.png);  	
+    background: url(../Tienda/img/contactf.png);  	
     background-repeat: no-repeat;
     min-height: 300px;
-    max-width:100%;}
+    max-width:100%;
+    margin-left: 25px;
+}
 
 
 h3{
@@ -109,7 +111,13 @@ h3{
     justify-content: end
     ;
 }
+.IMAGENPERRO{
+    background: url(../Tienda/img/perro2.jpg);
+    height: 600px;
 
+}
 
-
+#img-input{
+    background: url(../Tienda/img/paw.png);
+}
 
